@@ -26,12 +26,12 @@ do
     elif [[ $factorialNumberValue -gt "20" ]]
     then
         echo -e "\nThis script only shows the Factorial resault from 0 to 20!"
-        factorialResault="Value has excced the variable size!"
+        factorialResault="Value has exceed the variable size!"
     fi
 done
 
 
-if [[ $factorialResault == "Value has excced the variable size!" ]]; then
+if [[ $factorialResault == "Value has exceed the variable size!" ]]; then
     echo -e "\n\e[1;31mERROR!!!\n$factorialResault"
     
 else
@@ -39,7 +39,7 @@ else
     echo -e "\nFactorial resault: \n$factorialResault"
 fi
 
-echo -e "\n\e[1;37mThe script has run successfuly!\n"
+echo -e "\n\e[1;37mThe script has run successfully!\n"
 sleep 1
 
 
