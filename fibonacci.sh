@@ -42,6 +42,7 @@ else
     echo -e "\nThis script only shows 90 numbers from the series!\n"
 fi
 
-
+echo -e "The script has run successfuly!\n"
+sleep 1
 
 
