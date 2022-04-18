@@ -29,7 +29,7 @@ else
         then
             fibonacciNextNumber=$(( $fibonacciSecondNumber + $fibonacciFirstNumber ))
             fibonacciList+=("$fibonacciNextNumber")
-        elif [[ $fibonacciLength -le '90' ]] 
+        elif [[ $fibonacciLength -le '90' $$ ]] 
         then
             fibonacciNextNumber=$(( $fibonacciSecondNumber + $fibonacciFirstNumber ))
             fibonacciList+=("$fibonacciNextNumber")
