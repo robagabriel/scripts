@@ -35,7 +35,7 @@ if [[ $factorialResault == "Value has excced the variable size!" ]]; then
     echo -e "\n\e[1;31mERROR!!!\n$factorialResault"
     
 else
-    echo -e "\nThe Factorial number is: \n$factorialNumber"
+    echo -e "\n\e[1;34mThe Factorial number is: \n$factorialNumber"
     echo -e "\nFactorial resault: \n$factorialResault"
 fi
 
