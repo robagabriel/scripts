@@ -82,6 +82,7 @@ do
             else
                 echo -e "\n\e[1;33m"
                 echo -e "Wrong Letter!"
+                echo -e ${emptyString[*]}"\n"
                 echo -e "\n\e[1;37m"
                 break
             fi
