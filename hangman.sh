@@ -22,7 +22,7 @@ listOfAnimals=("Crocodile" "Anaconda" "Hippopotamus" "Octopus" "Alligator" "Ante
 
 while [[ -z $hangmanWord ]]
 do
-    read -p "Please enter the Hangman number the represents a word: " hangmanWord
+    read -p "Please enter the Hangman number that represents a word: " hangmanWord
     if ! [[ $hangmanWord =~ ^[0-9]+$ && $hangmanWord -le ${#listOfAnimals[@]} ]]; then
 	    hangmanWord=""
         echo -e "\nNo value was given!";
@@ -34,7 +34,7 @@ echo -e "\nThe value entred is: $hangmanWord\n"
 stringLentgh=$(echo ${listOfAnimals[$hangmanWord]} | grep -o . | wc -l)
 
 declare -a stringList
-for arrayValue in $(echo $hangmanWord | grep -o .)
+for arrayValue in $(echo ${listOfAnimals[$hangmanWord]} | grep -o .)
 do 
     stringList+=("$arrayValue")
 done
