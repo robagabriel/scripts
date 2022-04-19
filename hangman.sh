@@ -17,7 +17,7 @@ echo -e "The theme of the game are animals."
 echo -e "\n\e[1;37m"
 
 declare -a listOfAnimals
-listOfAnimals=("Crocodile" "Anaconda" "Hippopotamus" "Octopus" "Alligator" "Anteater" "Baboon" "Dolphin" "Lizard" "Peacock" "Flamingo" "Rooster" "Gorilla" "Buffalo" "Caterpillar" "Hamster" "Chimpanzee" "Cougar" "Cheetah" "Chicken" "Elephant" "Rattlesnake" "Lobster")
+listOfAnimals=("crocodile" "anaconda" "hippopotamus" "octopus" "alligator" "anteater" "baboon" "dolphin" "lizard" "peacock" "flamingo" "rooster" "gorilla" "buffalo" "caterpillar" "hamster" "chimpanzee" "cougar" "cheetah" "chicken" "elephant" "rattlesnake" "lobster")
 
 
 while [[ -z $hangmanWord ]]
