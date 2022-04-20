@@ -19,22 +19,21 @@ echo -e "\n\e[1;37m"
 declare -a listOfAnimals
 listOfAnimals=("crocodile" "anaconda" "hippopotamus" "octopus" "alligator" "anteater" "baboon" "dolphin" "lizard" "peacock" "flamingo" "rooster" "gorilla" "buffalo" "caterpillar" "hamster" "chimpanzee" "cougar" "cheetah" "chicken" "elephant" "rattlesnake" "lobster")
 
-
 while [[ -z $hangmanWord ]]
 do
     read -p "Please enter the Hangman number that represents a word: " hangmanWord
     if ! [[ $hangmanWord =~ ^[0-9]+$ && $hangmanWord -le ${#listOfAnimals[@]} ]]; then
 	    hangmanWord=""
         echo -e "\nNo value was given!";
-        echo -e "The value must be a number from 0 to ${#listOfAnimals[@]}!\n"
+        echo -e "The value must be a number from 1 to ${#listOfAnimals[@]}!\n"
     fi
 done
 echo -e "\nThe value entred is: $hangmanWord\n"
 
-stringLentgh=$(echo ${listOfAnimals[$hangmanWord]} | grep -o . | wc -l)
+stringLentgh=$(echo ${listOfAnimals[$(( $hangmanWord -1 ))]} | grep -o . | wc -l)
 
 declare -a stringList
-for arrayValue in $(echo ${listOfAnimals[$hangmanWord]} | grep -o .)
+for arrayValue in $(echo ${listOfAnimals[$(( $hangmanWord -1 ))]} | grep -o .)
 do 
     stringList+=("$arrayValue")
 done
@@ -62,8 +61,6 @@ do
             countString=0
             for stringNumber in $(seq $stringLentgh)
             do
-                # echo "first for"
-                # echo "array value: "${stringList[$countString]}" givin letter: "$hangmanLetter" conter for the array: "$countString
                 if [[ ${stringList[$countString]} == $hangmanLetter ]]; then
                     emptyString[$countString]=$hangmanLetter
                     goodLetter=1
