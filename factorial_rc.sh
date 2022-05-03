@@ -12,21 +12,25 @@ do
     fi
 done
 
-for factorialNumberValue in $(seq 0 $factorialNumber)
-do
-    if [[ $factorialNumberValue -eq "0" ]]; then
-        factorialNextNumber=$factorialFirstNumber
-        factorialResault=$factorialNextNumber
-    elif [[ $factorialNumberValue -le "20" ]] 
-    then
-        factorialNextNumber=$factorialResault
-        factorialResault=$(( $factorialNextNumber * $factorialNumberValue ))
-    elif [[ $factorialNumberValue -gt "20" ]]
-    then
-        echo -e "\nThis script only shows the Factorial resault from 0 to 20!"
-        factorialResault="Value has exceed the variable size!"
+function factorial_rc ()
+{
+    if [[ $1 == "1" ]]; then
+        echo $1
+    else
+        echo $(( $1 * $(factorial_rc $(($1 - 1)))))
     fi
-done
+}
+
+if [[ $factorialNumber -eq "0" ]]; then
+    factorialResault=$factorialFirstNumber
+elif [[ $factorialNumber -le "20" ]] 
+then
+    factorialResault=$(factorial_rc $factorialNumber)
+elif [[ $factorialNumber -gt "20" ]]
+then
+    echo -e "\nThis script only shows the Factorial resault from 0 to 20!"
+    factorialResault="Value has exceed the variable size!"
+fi
 
 if [[ $factorialResault == "Value has exceed the variable size!" ]]; then
     echo -e "\n\e[1;31mERROR!!!\n$factorialResault"
