@@ -1,11 +1,9 @@
-from ast import Continue
-from platform import architecture
-
-
+fib_empty = ""
+fib_array = []
 fib_len = ""
 while fib_len == "":
     try: 
-        fib_len = int(input("Please enter the length of the Fibonacci number: "))
+        fib_len = int(input("\nPlease enter the length of the Fibonacci number: "))
         if fib_len < 0:
             print ("\nThe number should be greater or equal to zero!\n")
             fib_len = ""
@@ -13,8 +11,7 @@ while fib_len == "":
         print("\nNo value was given!")
         print("The value must be an integer!\n")
 
-fib_empty = ""
-fib_array = []
+
 def fib_function(val):
     if val in {0, 1}:
         return val
@@ -32,9 +29,9 @@ else:
 if fib_empty == "The list can have zero elemets":
     print(fib_empty)
 elif fib_len < 36:
-    print("The length of the Fibonacci list is " + str(len(fib_array)) + " elements.\n")  
+    print("\nThe length of the Fibonacci list is " + str(len(fib_array)) + " elements.\n")  
     fib_list = [str(val) for val in fib_array]           
-    print(", ".join(fib_list))
+    print(", ".join(fib_list) + "\n")
 
 
 
