@@ -28,13 +28,20 @@ while ($null -eq $hangmanWord) {
         Write-Host "The value must be a number from 1 to " $stringLentgh "!"
     }
     
-    if ($hangmanWord -gt $stringLentgh){
-        Remove-Variable hangmanWord 
+    if (($hangmanWord -gt $stringLentgh) -or ($hangmanWord -match "0")){
+        try {
+            Remove-Variable hangmanWord -ErrorAction Stop
+        }
+        catch {
+            Write-Host "No value was given!
+            "
+        }
         #Write-Host "in while, if statement, value of hangman " $hangmanWord
         Write-Host "Wrong value was given!"
         Write-Host "The value must be a number from 1 to " $stringLentgh "!"
     }
 }
+
 #($hangmanWord -notmatch '^[0-9]+$') -and  -and (-not ($hangmanWord -le stringLentgh)
 #Write-Host $listOfAnimals.GetType()
 #Write-Host $stringLentgh.GetType()
@@ -62,20 +69,32 @@ $countFails = 1
 while ($countFails -le 6 ) {
     while ($animalSelected -notmatch $emptyString) {
         Write-Host "in second while, " $hangmanAnimal $emptyString
+        Write-Host ""
         try {
             [char]$hangmanLetter = Read-Host "Please enter a letter from the word"
+            
         }
         catch {
-            Write-Host "No value or to many values were given !"
-            Write-Host "The value must be a single letter!"
+            Write-Host ""
+            Write-Host "The value must be a single letter!
+            "
         }
         #Write-Host $hangmanLetter
         #Write-Host $hangmanLetter.GetType()
-        if ($hangmanLetter -match '[0-9]') {
-            Remove-Variable hangmanLetter
-            Write-Host "The values are from 0 to 9!"
+        if (($hangmanLetter -match '[0-9]') -or ($null -eq $hangmanLetter)) {
+            try {
+                Remove-Variable hangmanLetter -ErrorAction Stop
+            }
+            catch {
+                Write-Host "No value was given!
+                "
+            }
+            #Remove-Variable hangmanLetter
+            Write-Host "The values are from 0 to 9!
+            "
         }
         else {
+            Write-Host "from while 2 , else" $hangmanLetter
             Write-Host "The values are chars!"
             break
         }
