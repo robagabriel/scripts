@@ -56,19 +56,20 @@ $hangmanAnimal = $animalSelected.ToCharArray()
 $hangmanAnimalLength = $animalSelected.Length
 #Write-Host "This the word selected" $hangmanAnimal 
 #Write-Host "And this is the length of the string" $hangmanAnimalLength
-$emptyString = @()
+$emptyStringArray = @()
 for ($i = 0; $i -lt $hangmanAnimalLength; $i++) {
-    $emptyString += "_"
+    $emptyStringArray += "_"
 }
 Write-Host "Here you go!" 
 Write-Host "
-" $emptyString "
+" $emptyStringArray "
 "
-$countFails = 1
+[int]$countFails = 1
 #Write-Host $countFails.GetType()
 while ($countFails -le 6 ) {
+    $emptyString = $emptyStringArray -join ""
     while ($animalSelected -notmatch $emptyString) {
-        Write-Host "in second while, " $hangmanAnimal $emptyString
+        #Write-Host "in second while, " $animalSelected $emptyString
         Write-Host ""
         try {
             [char]$hangmanLetter = Read-Host "Please enter a letter from the word"
@@ -94,12 +95,155 @@ while ($countFails -le 6 ) {
             "
         }
         else {
-            Write-Host "from while 2 , else" $hangmanLetter
-            Write-Host "The values are chars!"
-            break
+            [int]$countString = 0
+            #$emptyStringArray[0] = $hangmanLetter
+            [int]$hangmanAnimalIndex = $hangmanAnimalLength - 1
+            #Write-Host "the index" $hangmanAnimalIndex
+            for ($i = 0; $i -lt $hangmanAnimalLength; $i++) {
+                if ($animalSelected[$i] -match $hangmanLetter) {
+                    $emptyStringArray[$i] = $hangmanLetter
+                    #Write-Host "value changed in empty string" $emptyStringArray
+                    [int]$goodLetter = 1 
+                }
+                elseif ($countString -ge $hangmanAnimalIndex) {
+                    [int]$countString = 0
+                }
+                $countString++
+            }
+            if ($goodLetter -eq 1) {
+                Write-Host ""
+                Write-Host "The letter $hangmanLetter was correct!
+                "
+                Write-Host "$emptyStringArray
+                "
+                [int]$goodLetter = 0
+            }
+            else {
+                Write-Host "Wrong Letter!
+                "
+                Write-Host "$emptyStringArray
+                "
+                break
+            }
+            #Write-Host "in second while, " $animalSelected "and value "$emptyString
+            #Write-Host "from while 2 , else" $hangmanLetter
+            #Write-Host "The values are chars!"
+            #break
+            
+        }
+        $emptyString = $emptyStringArray -join ""
+        if ($animalSelected -match $emptyString) {
+            [int]$wonTheGame = 1
         }
     }
-    Write-Host "in while" $countFails
+    if ($wonTheGame -eq 1) {
+        Write-Host ""
+        Write-Host "You won the game!
+        "
+        break
+    }
+    elseif ($countFails -eq 1) {
+        Write-Host ""
+        Write-Host "This was your $countFails atempt
+        "
+        Write-Host "
+        ________
+        |/     |
+        |      
+        |       
+        |    
+        |      
+        |     / 
+       /|\ 
+      / | \ 
+      "
+    }
+    elseif ($countFails -eq 2) {
+        Write-Host ""
+        Write-Host "This was your $countFails atempt
+        "
+        Write-Host "
+        ________
+        |/     |
+        |      
+        |      
+        |    
+        |      
+        |     / \ 
+       /|\ 
+      / | \ 
+      "
+    }
+    elseif ($countFails -eq 3) {
+        Write-Host ""
+        Write-Host "This was your $countFails atempt
+        "
+        Write-Host "
+        ________
+        |/     |
+        |      
+        |      
+        |    / 
+        |      
+        |     / \ 
+       /|\ 
+      / | \ 
+      "
+    }
+    elseif ($countFails -eq 4) {
+        Write-Host ""
+        Write-Host "This was your $countFails atempt
+        "
+        Write-Host "
+        ________
+        |/     |
+        |      
+        |       
+        |    /   \ 
+        |      
+        |     / \ 
+       /|\ 
+      / | \ 
+      "
+    }
+    elseif ($countFails -eq 5) {
+        Write-Host ""
+        Write-Host "This was your $countFails atempt
+        "
+        Write-Host "
+        ________
+        |/     |
+        |      
+        |      ^ 
+        |    / | \ 
+        |      ^
+        |     / \ 
+       /|\ 
+      / | \ 
+      "
+    }
+    elseif ($countFails -eq 6) {
+        Write-Host ""
+        Write-Host "This was your $countFails atempt
+        "
+        Write-Host "
+        ________
+        |/     |
+        |      O
+        |      ^ 
+        |    / | \ 
+        |      ^
+        |     / \ 
+       /|\ 
+      / | \ 
+      "
+      Write-Host "You lost!
+      "
+      Write-Host "You got hanged!
+      "
+    }
+    #Write-Host "wonthe game value" $wonTheGame
+    #Write-Host "in while" $countFails
     $countFails++
 }
 
