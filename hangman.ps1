@@ -67,8 +67,8 @@ Write-Host "
 [int]$countFails = 1
 #Write-Host $countFails.GetType()
 while ($countFails -le 6 ) {
-    $emptyString = $emptyStringArray -join ""
-    while ($animalSelected -notmatch $emptyString) {
+    #$emptyString = $emptyStringArray -join ""
+    while (@(Compare-Object $hangmanAnimal $emptyStringArray -SyncWindow 0).Length -ne 0) {
         #Write-Host "in second while, " $animalSelected $emptyString
         Write-Host ""
         try {
@@ -131,8 +131,8 @@ while ($countFails -le 6 ) {
             #break
             
         }
-        $emptyString = $emptyStringArray -join ""
-        if ($animalSelected -match $emptyString) {
+        #$emptyString = $emptyStringArray -join ""
+        if (@(Compare-Object $hangmanAnimal $emptyStringArray -SyncWindow 0).Length -eq 0) {
             [int]$wonTheGame = 1
         }
     }
