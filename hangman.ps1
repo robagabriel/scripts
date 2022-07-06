@@ -100,7 +100,7 @@ while ($countFails -le 6 ) {
             [int]$hangmanAnimalIndex = $hangmanAnimalLength - 1
             #Write-Host "the index" $hangmanAnimalIndex
             for ($i = 0; $i -lt $hangmanAnimalLength; $i++) {
-                if ($animalSelected[$i] -match $hangmanLetter) {
+                if ($hangmanAnimal[$i] -match $hangmanLetter) {
                     $emptyStringArray[$i] = $hangmanLetter
                     #Write-Host "value changed in empty string" $emptyStringArray
                     [int]$goodLetter = 1 
