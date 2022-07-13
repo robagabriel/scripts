@@ -37,7 +37,12 @@ $pipelinesRunsDetails = Invoke-RestMethod -uri $urlPipelinesRuns -Method Get -Co
 #$pipelinesRunsDetails[0].value[0] | ConvertTo-Json -Depth 9
 $lastRun = $pipelinesRunsDetails[0].value[0].name 
 $lastRunID = $pipelinesRunsDetails[0].value[0].id
+$startRun = $pipelinesRunsDetails[0].value[0].createdDate
+$endRun = $pipelinesRunsDetails[0].value[0].finishedDate
 Write-Host "the run has the name:" $lastRun "and the ID:" $lastRunID 
+Write-Host "The pipeline has started at:" $startRun "and finished at:" $endRun
+$elapsedTimeRun = (New-TimeSpan -Start $startRun -End $endRun).TotalSeconds
+Write-Host "The pipeline has run for:" $elapsedTimeRun "seconds."
 <#
 $urlResourceLogs = "logs"
 $expand = "signedContent"
@@ -58,7 +63,12 @@ $urlResourcePullrequests = "pullrequests"
 $urlPullrequests = $urlBase + "/" + $project + "/_apis/git/" + $urlResourceRepositories + "/" + $repoID + "/" + $urlResourcePullrequests + "?searchCriteria.status=completed&" +  $urlApiVersion
 Write-Host "The repositories pullrequests url is:" $urlPullrequests
 $repositoriesPullrequestsDetails = Invoke-RestMethod -uri $urlPullrequests -Method Get -ContentType "application/json" -headers $header
-$repositoriesPullrequestsDetails | ConvertTo-Json -Depth 9
+#$repositoriesPullrequestsDetails[0].value[0] | ConvertTo-Json -Depth 9 
+$starMerge = $repositoriesPullrequestsDetails[0].value[0].creationDate
+$endMerge = $repositoriesPullrequestsDetails[0].value[0].closedDate
+Write-Host "The merge started at:" $starMerge "and finished at:" $endMerge
+$elapsedTimeMerge = (New-TimeSpan -Start $starMerge -End $endMerge).TotalSeconds 
+Write-Host "The merge took this much time:" $elapsedTimeMerge "seconds."
 #https://dev.azure.com/{organization}/{project}/_apis/git/repositories/{repositoryId}/pullrequests?api-version=6.0
 #https://dev.azure.com/robagabriel/devopscoursegabi/_apis/git/repositories/bfbc965a-b5c5-43f6-850b-2c34da3f8dd1/pullrequests?api-version=6.0
 
