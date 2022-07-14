@@ -34,7 +34,7 @@ $urlResourceRuns = "runs"
 $urlPipelinesRuns = $urlBase + "/" + $project + "/_apis/" + $urlResourcePipelines + "/" + $firstPipelineID + "/" + $urlResourceRuns + "?" +  $urlApiVersion
 Write-Host "The URL for the pipelines runs is:" $urlPipelinesRuns
 $pipelinesRunsDetails = Invoke-RestMethod -uri $urlPipelinesRuns -Method Get -ContentType "application/json" -headers $header
-#$pipelinesRunsDetails[0].value[0] | ConvertTo-Json -Depth 9
+$pipelinesRunsDetails[0].value[0] | ConvertTo-Json -Depth 9
 $lastRun = $pipelinesRunsDetails[0].value[0].name 
 $lastRunID = $pipelinesRunsDetails[0].value[0].id
 $startRun = $pipelinesRunsDetails[0].value[0].createdDate
