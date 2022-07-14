@@ -1,4 +1,5 @@
-$urlBase = "https://dev.azure.com/robagabriel"
+$organization = Read-Host "Please enter your organization" 
+$urlBase = "https://dev.azure.com/" + $organization
 $urlResourceProjects = "projects"
 $urlApiVersion = "api-version=6.0"
 $urlProject = $urlBase + "/_apis/" + $urlResourceProjects + "?" +  $urlApiVersion
@@ -7,8 +8,13 @@ $user = ""
 $token = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes(("{0}:{1}" -f $user, $accessToken)))
 $header = @{authorization = "Basic $token"}
 $projectDetails = Invoke-RestMethod -uri $urlProject -Method Get -ContentType "application/json" -headers $header
-$project =  $projectDetails.value.name
 $projectID = $projectDetails.value.id
+$projectCount = $projectDetails.count
+Write-Host "There are the following projects:"
+for ($i = 0; $i -lt $projectCount; $i++) {
+    Write-Host $projectDetails.value[$i].name
+}
+$project =  Read-Host "Please enter your project from the list"
 $urlResourcePipelines = "pipelines"
 $urlPipelines = $urlBase + "/" + $project + "/_apis/" + $urlResourcePipelines + "?" +  $urlApiVersion
 $pipelinesDetails = Invoke-RestMethod -uri $urlPipelines -Method Get -ContentType "application/json" -headers $header
