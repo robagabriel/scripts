@@ -32,8 +32,11 @@ $repoID = $repositoriesDetails.value[0].id
 $urlResourcePullrequests = "pullrequests"
 $urlPullrequests = $urlBase + "/" + $project + "/_apis/git/" + $urlResourceRepositories + "/" + $repoID + "/" + $urlResourcePullrequests + "?searchCriteria.status=completed&" +  $urlApiVersion
 $repositoriesPullrequestsDetails = Invoke-RestMethod -uri $urlPullrequests -Method Get -ContentType "application/json" -headers $header
-$starMerge = $repositoriesPullrequestsDetails[0].value[0].creationDate
+$startMerge = $repositoriesPullrequestsDetails[0].value[0].creationDate
 $endMerge = $repositoriesPullrequestsDetails[0].value[0].closedDate
-$elapsedTimeMerge = (New-TimeSpan -Start $starMerge -End $endMerge).TotalSeconds 
-
+$pullrequestTitle = $repositoriesPullrequestsDetails[0].value[0].title
+$elapsedTimeMerge = (New-TimeSpan -Start $startMerge -End $endMerge).TotalSeconds 
+Write-Host "This script will print out the data regarding a pull request  from the project" $project "."
+Write-Host "The pull request with the title," $pullrequestTitle ", has stared at " $startMerge "and run for " $elapsedTimeMerge "seconds."
+Write-Host "It also triggered the pipiline" $firstPipeline "with the job" $lastRun "that started at" $startRun "and took" $elapsedTimeRun "seconds." 
 
