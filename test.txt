@@ -1,0 +1,212 @@
+{
+  "count": 1,
+  "value": [
+    {
+      "_links": {
+        "self": {
+          "href": "https://dev.azure.com/robagabriel/dd074cf0-f86b-4d6f-ab1d-df300587e742/_apis/build/Builds/314"
+        },
+        "web": {
+          "href": "https://dev.azure.com/robagabriel/dd074cf0-f86b-4d6f-ab1d-df300587e742/_build/results?buildId=314"
+        },
+        "sourceVersionDisplayUri": {
+          "href": "https://dev.azure.com/robagabriel/dd074cf0-f86b-4d6f-ab1d-df300587e742/_apis/build/builds/314/sources"
+        },
+        "timeline": {
+          "href": "https://dev.azure.com/robagabriel/dd074cf0-f86b-4d6f-ab1d-df300587e742/_apis/build/builds/314/Timeline"
+        },
+        "badge": {
+          "href": "https://dev.azure.com/robagabriel/dd074cf0-f86b-4d6f-ab1d-df300587e742/_apis/build/status/3"
+        }
+      },
+      "properties": {},
+      "tags": [],
+      "validationResults": [],
+      "plans": [
+        {
+          "planId": "cdde94fe-48ab-4a0a-81f4-8d9ec4104bb8"
+        }
+      ],
+      "triggerInfo": {
+        "ci.sourceBranch": "refs/heads/develop",
+        "ci.sourceSha": "2667e68576ee8e737d4ed299d9e3ce2ed558ec44",
+        "ci.message": "Merged PR 43: mod release",
+        "ci.triggerRepository": "bfbc965a-b5c5-43f6-850b-2c34da3f8dd1"
+      },
+      "id": 314,
+      "buildNumber": "20220511.14",
+      "status": "completed",
+      "result": "succeeded",
+      "queueTime": "2022-05-11T10:04:07.8003627Z",
+      "startTime": "2022-05-11T10:06:26.1588477Z",
+      "finishTime": "2022-05-11T10:08:40.5838233Z",
+      "url": "https://dev.azure.com/robagabriel/dd074cf0-f86b-4d6f-ab1d-df300587e742/_apis/build/Builds/314",
+      "definition": {
+        "drafts": [],
+        "id": 3,
+        "name": "Tutorial_pipeline",
+        "url": "https://dev.azure.com/robagabriel/dd074cf0-f86b-4d6f-ab1d-df300587e742/_apis/build/Definitions/3?revision=5",
+        "uri": "vstfs:///Build/Definition/3",
+        "path": "\\",
+        "type": "build",
+        "queueStatus": "enabled",
+        "revision": 5,
+        "project": {
+          "id": "dd074cf0-f86b-4d6f-ab1d-df300587e742",
+          "name": "devopscoursegabi",
+          "url": "https://dev.azure.com/robagabriel/_apis/projects/dd074cf0-f86b-4d6f-ab1d-df300587e742",
+          "state": "wellFormed",
+          "revision": 11,
+          "visibility": "private",
+          "lastUpdateTime": "2022-03-16T16:13:17.987Z"
+        }
+      },
+      "buildNumberRevision": 14,
+      "project": {
+        "id": "dd074cf0-f86b-4d6f-ab1d-df300587e742",
+        "name": "devopscoursegabi",
+        "url": "https://dev.azure.com/robagabriel/_apis/projects/dd074cf0-f86b-4d6f-ab1d-df300587e742",
+        "state": "wellFormed",
+        "revision": 11,
+        "visibility": "private",
+        "lastUpdateTime": "2022-03-16T16:13:17.987Z"
+      },
+      "uri": "vstfs:///Build/Build/314",
+      "sourceBranch": "refs/heads/develop",
+      "sourceVersion": "2667e68576ee8e737d4ed299d9e3ce2ed558ec44",
+      "queue": {
+        "id": 9,
+        "name": "Azure Pipelines",
+        "pool": {
+          "id": 9,
+          "name": "Azure Pipelines",
+          "isHosted": true
+        }
+      },
+      "priority": "normal",
+      "reason": "individualCI",
+      "requestedFor": {
+        "displayName": "Gabriel Roba",
+        "url": "https://spsprodweu5.vssps.visualstudio.com/A817aec4d-91bb-47f6-89fa-2f0fce0be855/_apis/Identities/14e26aae-fb6b-635f-9e9d-4b75fac95990",
+        "_links": {
+          "avatar": {
+            "href": "https://dev.azure.com/robagabriel/_apis/GraphProfile/MemberAvatars/msa.MTRlMjZhYWUtZmI2Yi03MzVmLTllOWQtNGI3NWZhYzk1OTkw"
+          }
+        },
+        "id": "14e26aae-fb6b-635f-9e9d-4b75fac95990",
+        "uniqueName": "roba.gabriel@outlook.com",
+        "imageUrl": "https://dev.azure.com/robagabriel/_apis/GraphProfile/MemberAvatars/msa.MTRlMjZhYWUtZmI2Yi03MzVmLTllOWQtNGI3NWZhYzk1OTkw",
+        "descriptor": "msa.MTRlMjZhYWUtZmI2Yi03MzVmLTllOWQtNGI3NWZhYzk1OTkw"
+      },
+      "requestedBy": {
+        "displayName": "Microsoft.VisualStudio.Services.TFS",
+        "url": "https://spsprodweu5.vssps.visualstudio.com/A817aec4d-91bb-47f6-89fa-2f0fce0be855/_apis/Identities/00000002-0000-8888-8000-000000000000",
+        "_links": {
+          "avatar": {
+            "href": "https://dev.azure.com/robagabriel/_apis/GraphProfile/MemberAvatars/s2s.MDAwMDAwMDItMDAwMC04ODg4LTgwMDAtMDAwMDAwMDAwMDAwQDJjODk1OTA4LTA0ZTAtNDk1Mi04OWZkLTU0YjAwNDZkNjI4OA"
+          }
+        },
+        "id": "00000002-0000-8888-8000-000000000000",
+        "uniqueName": "00000002-0000-8888-8000-000000000000@2c895908-04e0-4952-89fd-54b0046d6288",
+        "imageUrl": "https://dev.azure.com/robagabriel/_apis/GraphProfile/MemberAvatars/s2s.MDAwMDAwMDItMDAwMC04ODg4LTgwMDAtMDAwMDAwMDAwMDAwQDJjODk1OTA4LTA0ZTAtNDk1Mi04OWZkLTU0YjAwNDZkNjI4OA",
+        "descriptor": "s2s.MDAwMDAwMDItMDAwMC04ODg4LTgwMDAtMDAwMDAwMDAwMDAwQDJjODk1OTA4LTA0ZTAtNDk1Mi04OWZkLTU0YjAwNDZkNjI4OA"
+      },
+      "lastChangedDate": "2022-05-11T10:09:22.17Z",
+      "lastChangedBy": {
+        "displayName": "Microsoft.VisualStudio.Services.ReleaseManagement",
+        "url": "https://spsprodweu5.vssps.visualstudio.com/A817aec4d-91bb-47f6-89fa-2f0fce0be855/_apis/Identities/0000000d-0000-8888-8000-000000000000",
+        "_links": {
+          "avatar": {
+            "href": "https://dev.azure.com/robagabriel/_apis/GraphProfile/MemberAvatars/s2s.MDAwMDAwMGQtMDAwMC04ODg4LTgwMDAtMDAwMDAwMDAwMDAwQDJjODk1OTA4LTA0ZTAtNDk1Mi04OWZkLTU0YjAwNDZkNjI4OA"
+          }
+        },
+        "id": "0000000d-0000-8888-8000-000000000000",
+        "uniqueName": "0000000d-0000-8888-8000-000000000000@2c895908-04e0-4952-89fd-54b0046d6288",
+        "imageUrl": "https://dev.azure.com/robagabriel/_apis/GraphProfile/MemberAvatars/s2s.MDAwMDAwMGQtMDAwMC04ODg4LTgwMDAtMDAwMDAwMDAwMDAwQDJjODk1OTA4LTA0ZTAtNDk1Mi04OWZkLTU0YjAwNDZkNjI4OA",
+        "descriptor": "s2s.MDAwMDAwMGQtMDAwMC04ODg4LTgwMDAtMDAwMDAwMDAwMDAwQDJjODk1OTA4LTA0ZTAtNDk1Mi04OWZkLTU0YjAwNDZkNjI4OA"
+      },
+      "orchestrationPlan": {
+        "planId": "cdde94fe-48ab-4a0a-81f4-8d9ec4104bb8"
+      },
+      "logs": {
+        "id": 0,
+        "type": "Container",
+        "url": "https://dev.azure.com/robagabriel/dd074cf0-f86b-4d6f-ab1d-df300587e742/_apis/build/builds/314/logs"
+      },
+      "repository": {
+        "id": "bfbc965a-b5c5-43f6-850b-2c34da3f8dd1",
+        "type": "TfsGit",
+        "name": "functions-unittesting-sample",
+        "url": "https://dev.azure.com/robagabriel/devopscoursegabi/_git/functions-unittesting-sample",
+        "clean": null,
+        "checkoutSubmodules": false
+      },
+      "keepForever": true,
+      "retainedByRelease": true,
+      "triggeredByBuild": null
+    }
+  ]
+}
+
+{
+  "repository": {
+    "id": "bfbc965a-b5c5-43f6-850b-2c34da3f8dd1",
+    "name": "functions-unittesting-sample",
+    "url": "https://dev.azure.com/robagabriel/dd074cf0-f86b-4d6f-ab1d-df300587e742/_apis/git/repositories/bfbc965a-b5c5-43f6-850b-2c34da3f8dd1",
+    "project": {
+      "id": "dd074cf0-f86b-4d6f-ab1d-df300587e742",
+      "name": "devopscoursegabi",
+      "state": "unchanged",
+      "visibility": "unchanged",
+      "lastUpdateTime": "0001-01-01T00:00:00"
+    }
+  },
+  "pullRequestId": 43,
+  "codeReviewId": 43,
+  "status": "completed",
+  "createdBy": {
+    "displayName": "Gabriel Roba",
+    "url": "https://spsprodweu5.vssps.visualstudio.com/A817aec4d-91bb-47f6-89fa-2f0fce0be855/_apis/Identities/14e26aae-fb6b-635f-9e9d-4b75fac95990",
+    "_links": {
+      "avatar": {
+        "href": "https://dev.azure.com/robagabriel/_apis/GraphProfile/MemberAvatars/msa.MTRlMjZhYWUtZmI2Yi03MzVmLTllOWQtNGI3NWZhYzk1OTkw"
+      }
+    },
+    "id": "14e26aae-fb6b-635f-9e9d-4b75fac95990",
+    "uniqueName": "roba.gabriel@outlook.com",
+    "imageUrl": "https://dev.azure.com/robagabriel/_api/_common/identityImage?id=14e26aae-fb6b-635f-9e9d-4b75fac95990",
+    "descriptor": "msa.MTRlMjZhYWUtZmI2Yi03MzVmLTllOWQtNGI3NWZhYzk1OTkw"
+  },
+  "creationDate": "2022-05-11T10:03:52.9177204Z",
+  "closedDate": "2022-05-11T10:04:07.7771337Z",
+  "title": "mod release",
+  "description": "mod release",
+  "sourceRefName": "refs/heads/release/1.0",
+  "targetRefName": "refs/heads/develop",
+  "mergeStatus": "succeeded",
+  "isDraft": false,
+  "mergeId": "dbe08cf0-ba56-446c-8974-4a77084af60b",
+  "lastMergeSourceCommit": {
+    "commitId": "87ec44abf960d08ec46284c043d54b4c1ba90da6",
+    "url": "https://dev.azure.com/robagabriel/dd074cf0-f86b-4d6f-ab1d-df300587e742/_apis/git/repositories/bfbc965a-b5c5-43f6-850b-2c34da3f8dd1/commits/87ec44abf960d08ec46284c043d54b4c1ba90da6"
+  },
+  "lastMergeTargetCommit": {
+    "commitId": "782c295177a57ad86047d633eaf64df151910837",
+    "url": "https://dev.azure.com/robagabriel/dd074cf0-f86b-4d6f-ab1d-df300587e742/_apis/git/repositories/bfbc965a-b5c5-43f6-850b-2c34da3f8dd1/commits/782c295177a57ad86047d633eaf64df151910837"
+  },
+  "lastMergeCommit": {
+    "commitId": "2667e68576ee8e737d4ed299d9e3ce2ed558ec44",
+    "url": "https://dev.azure.com/robagabriel/dd074cf0-f86b-4d6f-ab1d-df300587e742/_apis/git/repositories/bfbc965a-b5c5-43f6-850b-2c34da3f8dd1/commits/2667e68576ee8e737d4ed299d9e3ce2ed558ec44"
+  },
+  "reviewers": [],
+  "url": "https://dev.azure.com/robagabriel/dd074cf0-f86b-4d6f-ab1d-df300587e742/_apis/git/repositories/bfbc965a-b5c5-43f6-850b-2c34da3f8dd1/pullRequests/43",
+  "completionOptions": {
+    "mergeCommitMessage": "Merged PR 43: mod release\n\nmod release",
+    "mergeStrategy": "noFastForward",
+    "transitionWorkItems": true,
+    "autoCompleteIgnoreConfigIds": []
+  },
+  "supportsIterations": true,
+  "completionQueueTime": "2022-05-11T10:04:07.0749842Z"
+}
+

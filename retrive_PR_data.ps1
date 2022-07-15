@@ -47,7 +47,9 @@ Write-Host
 
 $urlResourceBuilds = "builds"
 $urlBuilds = $urlBase + "/" + $project + "/_apis/build/" + $urlResourceBuilds + "?reasonFilter=individualCI&buildNumber=" + $runName + "&" + $urlApiVersion
+Write-Host "build html" $urlBuilds
 $buildsDetails = Invoke-RestMethod -uri $urlBuilds -Method Get -ContentType "application/json" -headers $header
+$buildsDetails | ConvertTo-Json -Depth 6 >> ./test.txt
 $buildID = $buildsDetails.value.id
 $buildQueue = $buildsDetails.value.queueTime
 $buildStart = $buildsDetails.value.startTime
@@ -69,8 +71,10 @@ else {
 
     $urlResourcePullrequests = "pullrequests"
     $urlPullrequests = $urlBase + "/" + $project + "/_apis/git/" + $urlResourceRepositories + "/" + $repoID + "/" + $urlResourcePullrequests + "?searchCriteria.status=completed&" +  $urlApiVersion
+    Write-Host "pull request html" $urlPullrequests
     $repositoriesPullrequestsDetails = Invoke-RestMethod -uri $urlPullrequests -Method Get -ContentType "application/json" -headers $header
     $repositoriesPullrequestsCount = $repositoriesPullrequestsDetails.count
+    $repositoriesPullrequestsDetails.value[0] | ConvertTo-Json -Depth 6 >> ./test.txt
     for ($i = 0; $i -lt $repositoriesPullrequestsCount; $i++) {
         $pullrequestMessage = $repositoriesPullrequestsDetails.value[$i].completionOptions.mergeCommitMessage
         $buildMessageWild = "*" +  $buildMessage + "*"
